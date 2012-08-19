@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#tkdiff "$2" "$5"
+vimdiff -R "$2" "$5"

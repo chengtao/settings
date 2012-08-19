@@ -1,0 +1,16 @@
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
+[core]
+        editor = vim
+[user]
+	name = Cheng-Tao Chu
+	email = chengtao.chu@gmail.com
+[diff]
+        external = ~/git_diff_wrapper
+[pager]
+        diff =
+[merge]
+	conflictstyle = diff3
