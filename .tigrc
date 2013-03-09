@@ -1,0 +1,2 @@
+set show-rev-graph = yes
+bind main d !git diff %(commit)^ %(commit)
