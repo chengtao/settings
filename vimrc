@@ -2,7 +2,8 @@ map <c-e> :q<CR>:q<CR>:q<CR>
 map <F5> :call g:Jsbeautify()<CR>
 set nocompatible          " We're running Vim, not Vi!
 syntax on                 " Enable syntax highlighting
-call pathogen#runtime_append_all_bundles()
+" call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 filetype plugin indent on
 
 " Load matchit (% to bounce from do to end, etc.)
@@ -58,11 +59,14 @@ set autowrite
 set nowritebackup
 set guioptions-=T " no toolbar
 
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
 syntax enable
-set background=dark
+set background=light
 " colorscheme solarized
 " colorscheme pablo
-colorscheme desert
+" colorscheme desert
+colorscheme solarized
 
 " set cursorline
 
@@ -74,6 +78,7 @@ match ExtraWhitespace /\s\+\%#\@<!$/
 
 " Strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
 
 " my split windows will <3 you so much
 " set colorcolumn=80
@@ -200,7 +205,7 @@ endfunction
 
 nnoremap <leader>. :call OpenTestAlternate()<cr>
 
-map <leader>t :call RunTestFile()<cr>
+" map <leader>t :call RunTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
 map <leader>a :call RunTests('')<cr>
 map <leader>c :w\|:!script/features<cr>
@@ -258,4 +263,10 @@ function! RunTests(filename)
         end
     end
 endfunction
+
+noremap <c-l> <c-l>:syntax sync fromstart<CR>
+inoremap <c-l> <esc><c-l>:syntax sync fromstart<CR>a
+map <leader>r :NERDTreeFind<cr>
+nmap <leader>g :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R><C-W>"<CR>:ccl<CR>:copen20<CR><c-w>K<CR><cr><c-l><c-l>
+vmap <leader>g y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:copen20<CR><c-w>K<CR><cr><c-l><c-l>
 
