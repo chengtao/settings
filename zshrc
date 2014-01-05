@@ -5,9 +5,9 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 #ZSH_THEME="crunch"
-ZSH_THEME="af-magic"
+#ZSH_THEME="af-magic"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -34,7 +34,7 @@ ZSH_THEME="af-magic"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby rails3 rbenv bundler gem sublime node npm brew)
+plugins=(git osx ruby rails3 rbenv bundler gem sublime node npm brew virtualenv)
 DISABLE_AUTO_TITLE=true
 . ~/Development/z/z.sh
 alias v='/Applications/MacVim.app/Contents/MacOS/Vim'
@@ -44,7 +44,10 @@ alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/chengtao/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="/usr/local/share/npm/bin:$PATH"
 eval "$(rbenv init -)"
+
+export JAVA_HOME=$(/usr/libexec/java_home)
 
