@@ -76,6 +76,7 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 autocm ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/
 
+let mapleader = ";"
 " Strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
@@ -90,7 +91,6 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 "match OverLength /\%81v.\+/
 
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-let mapleader = ";"
 map <leader>e :edit %%
 map <leader>v :view %%
 nnoremap <leader><leader> <c-^> " go to previous location
@@ -270,3 +270,10 @@ map <leader>r :NERDTreeFind<cr>
 nmap <leader>g :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R><C-W>"<CR>:ccl<CR>:copen20<CR><c-w>K<CR><cr><c-l><c-l>
 vmap <leader>g y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:copen20<CR><c-w>K<CR><cr><c-l><c-l>
 let g:Powerline_symbols = 'fancy'
+function! VimuxSlime()
+  call VimuxSendText(@v)
+  call VimuxSendKeys("Enter")
+endfunction
+map <Leader>vp :VimuxPromptCommand<CR>
+vmap <Leader>vs "vy :call VimuxSlime()<CR>
+
