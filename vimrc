@@ -115,11 +115,11 @@ set mouse=a
 highlight ColorColumn ctermbg=7
 
 " Command-T
-let g:CommandTMaxHeight=20
-let g:NERDSpaceDelims=1
-
-nmap <leader>t :CommandT<CR>
-nmap <leader>T :CommandTFlush<CR>:CommandT<CR>
+" let g:CommandTMaxHeight=20
+" let g:NERDSpaceDelims=1
+" nmap <leader>t :CommandT<CR>
+" nmap <leader>T :CommandTFlush<CR>:CommandT<CR>
+nmap <leader>t :CtrlP<CR>
 
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
@@ -269,4 +269,4 @@ inoremap <c-l> <esc><c-l>:syntax sync fromstart<CR>a
 map <leader>r :NERDTreeFind<cr>
 nmap <leader>g :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R><C-W>"<CR>:ccl<CR>:copen20<CR><c-w>K<CR><cr><c-l><c-l>
 vmap <leader>g y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:copen20<CR><c-w>K<CR><cr><c-l><c-l>
-
+let g:Powerline_symbols = 'fancy'
