@@ -8,4 +8,5 @@
 * [NerdTree]
 * [YouCompleteMe]
 * [Copilot]
-* [Minibuf]
+* [Minibufexpl]
+* [Airline]
